@@ -1,0 +1,111 @@
+<template>
+<div>
+  <Navbar />
+  <div class="registerPage">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <!-- <div class="text-center">
+            <a href="/"><img src="http://brahmapuri.org.in/images/logo11%20copy.png" alt="logo" /></a>
+          </div> -->
+
+          <form class="mt-4">
+            <div class="a-box a-spacing-extra-large">
+              <div class="a-box-inner">
+                <h1 class="a-spacing-small">Signin to account</h1>
+
+                <!-- Email -->
+                <div class="a-row a-spacing-base">
+                  <label for="ap_customer_name" class="a-form-lable">Email</label>
+                  <input type="email"
+                  v-model="email"
+                  id="ap_customer_name"
+                  class="a-input-text form-control auth-autofocus auth-required-field auth-contact-verification-request-info" />
+                </div>
+
+                <!-- Password -->
+                <div class="a-row a-spacing-base">
+                  <label for="ap_customer_name" class="a-form-lable">Password</label>
+                  <input type="password"
+                  v-model="password"
+                  id="ap_customer_name"
+                  class="a-input-text form-control auth-autofocus auth-required-field auth-contact-verification-request-info" />
+                  <div class="a-alert-container">
+                    <div class="a-alert-content">Password must be at least 6 Character long </div>
+                  </div>
+                </div>
+                <!-- button -->
+                <div class="a-row a-spacing-extra-large mb-4">
+                  <span class="a-button-primary">
+                    <span class="a-button-inner">
+                      <span @click="onLogin" class="a-button-text">Signin</span>
+                    </span>
+                  </span>
+                  <div class="a-row a-spacing-top-medium a-size-small">
+                    <b>
+                      After login, you agree to our
+                       <a href="#">conditions of use</a> and 
+                       <a href="#">Privacy Notice</a>
+                    </b>
+                  </div>
+                </div>
+                <hr />
+                <div class="a-row">
+                  <b>
+                    Don't have a account?
+                    <nuxt-link to="/signup" class="a-link-emphasis">Register</nuxt-link>
+                  </b>
+                </div>  
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<Footer />
+  </div>
+</template>
+
+<script>
+
+export default {
+  middleware: 'auth',
+  auth: 'guest',
+ data(){
+   return{
+     email:'',
+     password:''
+   }
+ },
+ methods: {
+   async onLogin(){
+    //  console.log("called post method")
+     try{
+    //    let data = {
+    //      email: this.email,
+    //      password: this.password
+    //    }
+    //    console.log('data', data)
+    //    let response = await this.$axios.$post('http://localhost:8000/api/auth/signup', data)
+    //    console.log(response)
+    //    if(response.success){
+    //      this.$cookies.set('brahmapuriToken', response.token)
+         this.$auth.loginWith('local',{
+           data:{
+             email: this.email,
+             password: this.password
+           }
+         }).then(response =>{
+           this.$cookies.set('brahmapuriToken', response.data.token)
+         })
+         this.$forceUpdate();
+         this.$router.push('/')
+     } catch(err){
+       console.log(err)
+     }
+   }
+ }
+}
+</script>
