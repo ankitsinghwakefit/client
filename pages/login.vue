@@ -6,9 +6,9 @@
       <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-          <!-- <div class="text-center">
-            <a href="/"><img src="http://brahmapuri.org.in/images/logo11%20copy.png" alt="logo" /></a>
-          </div> -->
+          <div v-show="message" class="text-center">
+            {{message}}
+          </div>
 
           <form class="mt-4">
             <div class="a-box a-spacing-extra-large">
@@ -76,32 +76,47 @@ export default {
  data(){
    return{
      email:'',
-     password:''
+     password:'',
+     message: ''
    }
  },
  methods: {
    async onLogin(){
     //  console.log("called post method")
      try{
-    //    let data = {
-    //      email: this.email,
-    //      password: this.password
-    //    }
-    //    console.log('data', data)
-    //    let response = await this.$axios.$post('http://localhost:8000/api/auth/signup', data)
-    //    console.log(response)
-    //    if(response.success){
-    //      this.$cookies.set('brahmapuriToken', response.token)
-         this.$auth.loginWith('local',{
-           data:{
-             email: this.email,
-             password: this.password
-           }
-         }).then(response =>{
-           this.$cookies.set('brahmapuriToken', response.data.token)
-         })
-         this.$forceUpdate();
+       let data = {
+         email: this.email,
+         password: this.password
+       }
+       let response = await this.$axios.$post('https://brahmapuri-server.herokuapp.com/api/auth/login', data)
+       if(response.success){
+         this.$cookies.set('brahmapuriToken', response.token)
          this.$router.push('/')
+        //  window.location.reload(true)
+       } else {
+         console.log("wrong password")
+         this.message = "Enter email or password correctly"
+             return
+       }
+        //  this.$auth.loginWith('local',{
+        //    data:{
+        //      email: this.email,
+        //      password: this.password
+        //    }
+        //  }).then(response =>{
+        //    console.log("login response", response)
+          //  if(response.data.success){
+          //    this.$cookies.set('brahmapuriToken', response.data.token)
+          //    window.location.reload(true)
+          //    this.$router.push('/')
+          //  } 
+          //  if(!response.success) {
+          //    this.message = "Enter email or password correctly"
+          //    console.log("wrong password")
+          //    return
+          //  }
+         //})
+        //  this.$forceUpdate();
      } catch(err){
        console.log(err)
      }

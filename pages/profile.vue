@@ -88,7 +88,6 @@ export default {
     },
     async getUserDetails(){
        try{
-         console.log("called userDeatails")
          let v = this.$cookies.get('brahmapuriToken')
       let response = await this.$axios.$get("https://brahmapuri-server.herokuapp.com/api/auth/user", {
         headers: {

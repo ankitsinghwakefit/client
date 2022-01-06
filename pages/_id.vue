@@ -239,11 +239,11 @@
                   <div class="a-section a-spacing-none">
                     <span class="a-size-medium a-color-success">In Stock</span>
                   </div>
-                  <div class="a-section a-spacing-mini">Ships from and sold by Amazon.com</div>
+                  <div class="a-section a-spacing-mini">Ships from and sold by brahmapuri-life-essentials</div>
                 </div>
 
                 <div class="a-section">
-                  <div class="a-button-stack">
+                  <div class="a-button-stack" @click="addProductToCart(product)">
                     <span class="a-spacing-small a-button-primary a-button-icon">
                       <span class="a-button-inner">
                         <i class="a-icon a-icon-cart"></i>
@@ -348,7 +348,7 @@
 </template>
 
 <script>
-
+import { mapActions } from "vuex"
 export default {
   data(){
     return{
@@ -361,16 +361,9 @@ export default {
     .then(response => {this.product = response.product})
     .catch(err => {console.log(err)})
   },
-  // async asyncData({$axios, params}) {
-  //   try {
-  //     let response = await $axios.$get(`https://brahmapuri-server.herokuapp.com/api/products/${params.id}`)
-  //     return {
-  //       product: response.product
-  //     }
-  //   }catch (err) {
-  //     console.log(err)
-  //   }
-  // }
+  methods: {
+    ...mapActions(["addProductToCart"])
+  }
 }
 </script>
 <style scoped>

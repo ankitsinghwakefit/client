@@ -3,10 +3,10 @@
       <div class="container-fluid desktop-nav">
         <div class="row">
           <!-- logo -->
-          <div class="col-sm-2">
+          <div class="col-sm-2 mb-3">
             <div class="logo-area">
               <router-link to="/">
-                <img src="http://brahmapuri.org.in/images/logo11%20copy.png" alt="logo" class="img-fluid" />
+                <img src="img/blogo.jpg" alt="logo" class="img-fluid" />
               </router-link>
             </div>
           </div>
@@ -16,7 +16,6 @@
           </div>
           <div class="col-sm-4"></div>
         </div>
-
         <div class="row">
           <!-- Delivery -->
           <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pl-2">
@@ -44,11 +43,13 @@
 
               <div class="nav-xshop-container">
                 <div class="nav-xshop">
-                  <router-link to="/" class="nav-a">Home</router-link>
-                  <a href="#" class="nav-a">Contact Us</a>
-                  <router-link to="/signup" class="nav-a">Register</router-link>
-                  <a href="#" class="nav-a">About Us</a>
-                  <router-link to="/login" class="nav-a">Login</router-link>
+                  <router-link to="/" class="nav-a">Products</router-link>
+                  <router-link to="/contact" class="nav-a">Contact Us</router-link>
+                  <router-link to="/signup" v-show="!getUser" class="nav-a">Register</router-link>
+                  <router-link to="/about" class="nav-a">About Us</router-link>
+                  <span v-if="getUser" style="curser:pointer" @click="logoutUser" to="#" class="nav-a">Logout</span>
+                  <span v-else @click="loginUser" style="curser:pointer" class="nav-a">Login</span>
+                  <router-link to="/alladdress" class="nav-a">Your Address</router-link>
                 </div>
               </div>
             </div>
@@ -72,10 +73,10 @@
                 </span>
               </a>
               <span class="icp-nav-link-border"></span>
-              <template v-if="token">
+              <template v-if="getUser">
                 <nuxt-link to="/profile" class="nav-a nav-a-2" id="nav-link-accountlist" tabindex="0">
                 <span class="nav-line-1">Hello,</span>
-                <span class="nav-line-2">{{userName}}</span>
+                <span class="nav-line-2">{{getUser.name}}</span>
               </nuxt-link>
               </template>
               <template v-else>
@@ -96,7 +97,7 @@
               <span aria-hidden="true" class="nav-line-1"></span>
                <span aria-hidden="true" class="nav-line-2">Cart</span>
               <span class="nav-cart-icon nav-sprite"></span>
-              <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-0">0</span>
+              <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-0">{{getCartLength}}</span>
               </nuxt-link>
             </div>
           </div>
@@ -106,6 +107,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Search from '~/components/Search'
 export default {
   components: {
@@ -116,10 +118,13 @@ export default {
       
     }
   },
-  props: {
-    token: '',
-      userName: ''
-  }
+    // props: {
+    //   token: '',
+    //     userName: ''
+    // },
+  computed: {
+    ...mapGetters(["getCartLength", "getUser"])
+  },
 //   created () {
 //           let user = this.$cookies.get('auth._token.local')? this.$cookies.get('auth._token.local') : null;
 //         this.token = user
@@ -134,21 +139,31 @@ export default {
   //     return userToken
   //   }
   // },
-  // methods: {
-  //   async getUserDetails(){
-  //      try{
-  //        console.log("called userDeatails")
-  //     let response = await $axios.$post("http://localhost:8000/api/auth/user", {
-  //       headers: {
-  //         'x-access-token': this.token
-  //       }
-  //     })
-  //     console.log("user details",response)
-  //       // this.userName = response.products
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  //   }
-  // }
+  methods: {
+     logoutUser(){
+       console.log("logout")
+       this.$cookies.remove("brahmapuriToken")
+       this.$store.commit("logoutUser")
+       window.location.reload(true)
+       this.$router.push("/login")
+     },
+     loginUser(){
+        this.$router.push("/login")
+     }
+    }
+    // async getUserDetails(){
+    //    try{
+    //      console.log("called userDeatails")
+    //   let response = await $axios.$post("http://localhost:8000/api/auth/user", {
+    //     headers: {
+    //       'x-access-token': this.token
+    //     }
+    //   })
+    //   console.log("user details",response)
+    //     // this.userName = response.products
+    // } catch (err) {
+    //   console.log(err)
+    // }
+    // }
 }
 </script>

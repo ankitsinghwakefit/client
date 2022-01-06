@@ -662,27 +662,27 @@ header form input{
 }	
 @media(max-width: 1215px){
   .nav-xshop a:nth-child(6){
-    display: none
+    display: inline-block
   }
 }
 @media(max-width: 1199px){
   .nav-xshop a:nth-child(5){
-    display: none
+    display:  inline-block
   }
 }
 @media(max-width: 1185px){
   .nav-xshop a:nth-child(4){
-    display: none
+    display:  inline-block
   }
 }
 @media(max-width: 1068px){
   .nav-xshop a:nth-child(3){
-    display: none
+    display:  inline-block
   }
 }
 @media(max-width: 991px){
   .nav-xshop a:nth-child(2){
-    display: none
+    display:  inline-block
   }
 }
 

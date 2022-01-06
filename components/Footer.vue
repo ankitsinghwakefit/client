@@ -12,7 +12,7 @@
           <div class="row">
             <div class="col-md-3 col-sm-6">
               <div class="navFooterCol">
-                <div class="navFooterColHead">About Us</div>
+                <div class="navFooterColHead"><router-link style="color:white;text-decoration:none" to="/about">About Us</router-link></div>
                 <!-- <ul>
                   <li>
                     <a href="#">Careers</a>
@@ -62,7 +62,8 @@
             </div>
             <div class="col-md-3 col-sm-6">
               <div class="navFooterCol">
-                <div class="navFooterColHead">Our Address</div>
+
+                <div class="navFooterColHead"><router-link style="color:white;text-decoration:none" to="/location">Our Location</router-link></div>
                 <!-- <ul>
                   <li>
                     <a href="#">Sell on Amazon</a>
@@ -87,7 +88,7 @@
             </div>
             <div class="col-md-3 col-sm-6">
               <div class="navFooterCol">
-                <div class="navFooterColHead">Contact Us</div>
+                <div class="navFooterColHead"><router-link style="color:white;text-decoration:none" to="/contact" class="nav-a">Contact Us</router-link></div>
                 <!-- <ul>
                   <li>
                     <a href="#">Sell on Amazon</a>
@@ -567,7 +568,7 @@
           <li>
             <a href class="nav_a">Internet-Based Ads</a>
           </li>
-          <li class="nav_last">© 2003-2022, BrahmapuriWellness.com, Inc. or its affiliates</li>
+          <li class="nav_last">© 2003-2022, brahmapuri-life-essentials, Inc. or its affiliates</li>
         </ul>
       </div>
     </div>

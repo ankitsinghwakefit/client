@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- navbar -->
-    <Navbar :userName="userName" :token="token" />
+    <Navbar />
     <!-- main content -->
 
     <b-container fluid class="bv-example-row">
@@ -51,8 +51,8 @@
               </b-list-group>
 
               <b-card-body>
-                <a href="#" class="card-link">Buy</a>
-                <a href="#" class="card-link">Add to cart</a>
+                <a href="#"  @click="addProductToCart(product)" class="card-link">Buy</a>
+                <a href="#"  @click="addProductToCart(product)" class="card-link">Add to cart</a>
                 <router-link class="card-link" :to="product._id">View Product</router-link>
               </b-card-body>
             </b-card>
@@ -67,6 +67,8 @@
 </template>
 
 <script>
+import { mapActions } from "vuex"
+import { mapGetters } from 'vuex'
 import featuredProduct from "~/components/FeaturedProduct";
 export default {
   name: "IndexPage",
@@ -82,7 +84,6 @@ export default {
   },
   created() {
     if (this.$cookies.get("brahmapuriToken")) {
-      this.$forceUpdate();
       let user = this.$cookies.get("brahmapuriToken")
         ? this.$cookies.get("brahmapuriToken")
         : null;
@@ -93,11 +94,17 @@ export default {
       this.userName = null;
     }
   },
+   computed: {
+    ...mapGetters(["getUser"])
+  },
   mounted(){
     this.$axios.$get("https://brahmapuri-server.herokuapp.com/api/products")
     .then(response => {this.products = response.products})
     .catch(err => {console.log(err)})
   },
+  // updated(){
+  //   window.location.reload(true)
+  // },
   // async asyncData({ $axios }) {
   //   try {
   //     let response = await $axios.$get(
@@ -122,11 +129,13 @@ export default {
             },
           }
         );
+        this.$store.commit("addUser", response.user)
         this.userName = response.user.name;
       } catch (err) {
         console.log(err);
       }
     },
+    ...mapActions(["addProductToCart"])
   },
 };
 </script>
