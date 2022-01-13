@@ -51,8 +51,8 @@
               </b-list-group>
 
               <b-card-body>
-                <a href="#"  @click="addProductToCart(product)" class="card-link">Buy</a>
-                <a href="#"  @click="addProductToCart(product)" class="card-link">Add to cart</a>
+                <a href="#" class="card-link" @click="addProductToCart(product)">Buy</a>
+                <a href="#" class="card-link" @click="addProductToCart(product)">Add to cart</a>
                 <router-link class="card-link" :to="product._id">View Product</router-link>
               </b-card-body>
             </b-card>
@@ -83,6 +83,7 @@ export default {
     featuredProduct,
   },
   created() {
+    // console.log("local storage in index", localStorage.getItem("brahmapuriToken"))
     if (this.$cookies.get("brahmapuriToken")) {
       let user = this.$cookies.get("brahmapuriToken")
         ? this.$cookies.get("brahmapuriToken")
@@ -121,6 +122,7 @@ export default {
     async getUserDetails() {
       try {
         let v = this.$cookies.get("brahmapuriToken");
+        // let v = LocalStorage.getItem('brahmapuriToken') || this.$cookies.get('brahmapuriToken')
         let response = await this.$axios.$get(
           "https://brahmapuri-server.herokuapp.com/api/auth/user",
           {
@@ -136,7 +138,7 @@ export default {
       }
     },
     ...mapActions(["addProductToCart"])
-  },
+  }
 };
 </script>
 

@@ -32,7 +32,7 @@
               </div>
               <div class="a-spacing-double-large">
                 <div class="row a-spacing-micro">
-                  <div class="col-lg-4 col-md-5 col-sm-12 pb-2">
+                  <div v-if="showAddAddress == 0" class="col-lg-4 col-md-5 col-sm-12 pb-2">
                     <nuxt-link
                       to="/address"
                       class="a-link-normal add-new-address-button"
@@ -266,6 +266,7 @@
 export default {
    data() {
     return {
+      showAddAddress: true,
       address: null,
       targetedAddress: "",
       message:'',
@@ -284,7 +285,8 @@ export default {
     };
   },
   mounted(){
-    let v = this.$cookies.get('brahmapuriToken')
+    console.log("local", localStorage.getItem('brahmapuriToken'), "cook",this.$cookies.get('brahmapuriToken'))
+    let v = localStorage.getItem('brahmapuriToken') || this.$cookies.get('brahmapuriToken')
     if(!v){
       alert("Please login or register to add address")
       this.$router.push('/login')}
@@ -294,13 +296,17 @@ export default {
               "x-access-token": v,
             },
           })
-    .then(response => {this.address = response.address})
+    .then(response => {
+      this.showAddAddress = response.address.length
+      console.log("null address",typeof(this.showAddAddress))
+      this.address = response.address}
+      )
     .catch(err => {console.log(err)})
   },
   methods:{
     async onDeleteAddress(id,index){
     try{
-      let v = this.$cookies.get('brahmapuriToken')
+      let v = this.$cookies.get('brahmapuriToken') || localStorage.getItem('brahmapuriToken')
         let response = await this.$axios.$delete(`https://brahmapuri-server.herokuapp.com/api/address/${id}`,{
             headers: {
               "x-access-token": v,
@@ -352,7 +358,7 @@ export default {
       deliveryInstructions: this.deliveryInstructions,
       securityCode: this.securityCode
       }
-      let v = this.$cookies.get('brahmapuriToken')
+      let v = this.$cookies.get('brahmapuriToken') || localStorage.getItem('brahmapuriToken')
       let response = await this.$axios.$put(`https://brahmapuri-server.herokuapp.com/api/address/${this.targetedAddressId}`, data,  {
             headers: {
               "x-access-token": v,

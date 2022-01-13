@@ -1,7 +1,8 @@
 export const state = () => ({
   cart: [],
   cartLength: 0,
-  loginedUser: null
+  loginedUser: null,
+  cartToatl: 0
 })
 
 export const actions = {
@@ -22,11 +23,22 @@ export const mutations = {
   pushProductToCart(state, product) {
     product.quantity = 1
     state.cart.push(product)
+
+    let total = 0
+    state.cart.map(product => {
+      total += product.price * product.quantity
+    })
+    state.cartToatl = total
   },
   incrementProductQty(state, product){
     product.quantity++
     let indexOfProduct = state.cart.indexOf(product)
     state.cart.splice(indexOfProduct, 1, product)
+    let total = 0
+    state.cart.map(product => {
+      total += product.price * product.quantity
+    })
+    state.cartToatl = total
   },
   incrementCartLength(state) {
     state.cartLength = 0;
@@ -49,11 +61,29 @@ export const mutations = {
 
     let indexOfProduct = state.cart.indexOf(cartProduct)
     state.cart.splice(indexOfProduct, 1, cartProduct)
+
+    let total = 0
+    state.cart.map(product => {
+      total += product.price * product.quantity
+    })
+    state.cartToatl = total
   },
   removeProduct(state, product){
     state.cartLength -= product.quantity
     let indexOfProduct = state.cart.indexOf(product)
     state.cart.splice(indexOfProduct, 1)
+
+    let total = 0
+    state.cart.map(product => {
+      total += product.price * product.quantity
+    })
+    state.cartToatl = total
+  },
+  clearCart(state){
+    state.cart = []
+    state.cartLength = 0
+    state.loginedUser = null
+    state.cartToatl = 0
   },
   addUser(state, currentUser){
     state.loginedUser = currentUser
@@ -79,5 +109,8 @@ export const getters = {
   },
   getUser(state){
     return state.loginedUser
+  },
+  getCartTotal(state){
+    return state.cartToatl
   }
 }

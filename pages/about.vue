@@ -44,7 +44,52 @@
           </p>
         </b-row>
         <b-row style="margin: 20px">
-          <p style="text-align-last: justify; text-align: justify">
+          <h5>The objects for which the company is established are:</h5>
+          <div>
+  <b-card no-body>
+    <div class="bg-secondary text-light p-3">
+      To act as a social and spiritual organization to promote spiritual health,
+healthy lifestyle, health awareness, research, development, manufacture
+& distribution of various types of health products, health supplements
+and herbal medicines and nature-based products.
+    </div>
+  </b-card>
+  <b-card no-body>
+    <div class="bg-secondary text-light p-3">
+      To donate, distribute, sell& supply a wide variety of health products and
+life essentials which are necessary to improve, promote, nourish, cure,
+maintain and enhance individual & social health & beauty and span of
+life & life comfort at a very reasonable, affordable and low cost.
+    </div>
+  </b-card>
+   <b-card no-body>
+    <div class="bg-secondary text-light p-3">
+      To help society and people at large increase life span and maintain &
+improve the Quality of Life.
+    </div>
+  </b-card>
+   <b-card no-body>
+    <div class="bg-secondary text-light p-3">
+      To promote, conduct, support & encourage research & development
+activities in preparation of various herbal & nature-based products & life
+essentials.
+    </div>
+  </b-card>
+   <b-card no-body>
+    <div class="bg-secondary text-light p-3">
+       To Support all types of Sahajyoga activities that aim to improve the
+subtle system of human life, guided and taught by HH Shree Mataji
+Nirmala Devi.
+    </div>
+  </b-card>
+  <b-card no-body>
+    <div class="bg-secondary text-light p-3">
+       To support all kinds of Sahajyoga activities, an ethnic group working on
+social and spiritual upliftment for many decades.
+    </div>
+  </b-card>
+</div>
+          <!-- <p style="text-align-last: justify; text-align: justify">
             There is a rock by the side of this Nahani called the Shri Ram Rock.
             Later, Shri Samarth Ramdas (who was an incarnation of Shri Hanumana)
             found in the deep waters of the river Krishna, stone idols of Shri
@@ -53,9 +98,9 @@
             people (Anglo i.e Westerners), or Mother Mary. She further added
             that since their Mother (Shri Mary) has been here at this place, the
             Western people should come and practice Sahaja yoga here.
-          </p>
+          </p> -->
         </b-row>
-        <b-row style="margin: 20px">
+        <!-- <b-row style="margin: 20px">
           <p style="text-align-last: justify; text-align: justify">
             The blissful attention of Shri Mataji to Brahmapuri and Her working
             to find such a location manifested in the early 1970s, when Shri
@@ -79,7 +124,7 @@
             listen to melodious sound of Krishna river water and said that was
             Shri Krishna Shakti singing to welcome Adi Shakti.
           </p>
-        </b-row>
+        </b-row> -->
       </b-container>
       <!-- <b-container>
       <div style="margin: 20px">
@@ -103,3 +148,13 @@
     <Footer />
   </div>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: "About"
+    };
+  },
+};
+</script>

@@ -21,10 +21,10 @@
           <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 pl-2">
             <div class="nav-global-location">
               <nuxt-link to="#" class="nav-a nav-a-2">
-                <div class="nav-sprite" id="nav-packard-glow-loc-icon"></div>
+                <!-- <div class="nav-sprite" id="nav-packard-glow-loc-icon"></div> -->
                 <div id="glow-ingress-block">
-                  <span class="nav-line-1" id="glow-ingress-line1">Deliver to</span>
-                  <span class="nav-line-2" id="glow-ingress-line2">Chhindwada</span>
+                  <!-- <span class="nav-line-1" id="glow-ingress-line1">Deliver to</span>
+                  <span class="nav-line-2" id="glow-ingress-line2">Chhindwada</span> -->
                 </div>
               </nuxt-link>
             </div>
@@ -142,9 +142,10 @@ export default {
   methods: {
      logoutUser(){
        console.log("logout")
+       localStorage.removeItem("brahmapuriToken");
        this.$cookies.remove("brahmapuriToken")
        this.$store.commit("logoutUser")
-       window.location.reload(true)
+      //  window.location.reload(true)
        this.$router.push("/login")
      },
      loginUser(){

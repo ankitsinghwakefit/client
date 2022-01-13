@@ -560,13 +560,16 @@
       <div class="navFooterCopyright">
         <ul>
           <li>
-            <a href="#" class="nav_a">Conditions of Use</a>
+            <router-link to="/termsandconditions" class="nav_a">Terms & Conditions</router-link>
           </li>
           <li>
-            <a href class="nav_a">Privacy Notice</a>
+            <router-link to="/privacypolicy" class="nav_a">Privacy policy</router-link>
           </li>
           <li>
-            <a href class="nav_a">Internet-Based Ads</a>
+            <router-link to="/returnandrefundpolicy" class="nav_a">Return & Refund Policy</router-link>
+          </li>
+          <li>
+            <router-link to="/shippingpolicy" class="nav_a">Shipping Policy</router-link>
           </li>
           <li class="nav_last">© 2003-2022, brahmapuri-life-essentials, Inc. or its affiliates</li>
         </ul>

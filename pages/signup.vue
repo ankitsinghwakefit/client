@@ -85,17 +85,20 @@ export default {
  },
  methods: {
    async onSignup(){
-     console.log("called post method")
+     if(!this.name || !this.email || !this.password){
+       alert("Please enter all the fields to register")
+       return
+     }
      try{
        let data = {
          name: this.name,
          email: this.email,
          password: this.password
        }
-       console.log('data', data)
        let response = await this.$axios.$post('https://brahmapuri-server.herokuapp.com/api/auth/signup', data)
        console.log(response)
        if(response.success){
+        localStorage.setItem('brahmapuriToken', response.token)
          this.$cookies.set('brahmapuriToken', response.token)
          this.$auth.loginWith('local',{
            data:{
@@ -104,6 +107,9 @@ export default {
            }
          })
          this.$router.push('/')
+       }
+       if(!response.success){
+         alert(response.message)
        }
      } catch(err){
        console.log(err)

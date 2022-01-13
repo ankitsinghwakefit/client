@@ -126,8 +126,8 @@
                   </div>
                   <div>
                     <span class="a-spacing-small a-button-primary a-button-icon">
-                      <span class="a-button-inner">
-                        <a href="#" class="a-button-text">Proceed to checkout</a>
+                      <span class="a-button-inner" v-if="getCartTotalPrice !== 0">
+                        <router-link to="/placeorder" class="a-button-text">Proceed to checkout</router-link>
                       </span>
                     </span>
                   </div>
@@ -203,6 +203,13 @@ export default {
   computed: {
     ...mapGetters(["getCart", "getCartTotalPrice"
     , "getCartLength"])
+    // isDisabled() {
+    //    if(this.getCartTotalPrice == 0){
+    //      return true
+    //    } else {
+    //      return true
+    //    }
+    //   },
   },
   methods: {
     onChangeQuantity(event, product){

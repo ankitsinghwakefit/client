@@ -36,7 +36,7 @@
               <h2>Add a new address</h2>
               <div class="a-section a-spacing-none a-spacing-top-small">
                 <b>
-                  Or pick up your packages at your convenience from our self-service locations. To add an Amazon Pickup Point or Locker, click
+                  Or pick up your packages at your convenience from our self-service locations. To add an brahmapuri-life-essentials Pickup Point or Locker, click
                   <a
                     href="#"
                   >here</a>.
@@ -201,7 +201,7 @@ export default {
       deliveryInstructions: this.deliveryInstructions,
       securityCode: this.securityCode
       }
-      let v = this.$cookies.get('brahmapuriToken')
+      let v = this.$cookies.get('brahmapuriToken') || localStorage.getItem('brahmapuriToken')
       let response = await this.$axios.$post("https://brahmapuri-server.herokuapp.com/api/address", data,  {
             headers: {
               "x-access-token": v,

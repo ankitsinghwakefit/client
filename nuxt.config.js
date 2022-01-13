@@ -13,7 +13,12 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'css/font-awesome/css/all.css' },
       { rel: 'stylesheet', href: 'css/default.css' }
-    ]
+    ],
+    script: [
+      {
+        src: "https://checkout.razorpay.com/v1/checkout.js",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -54,7 +59,8 @@ export default {
   },
 
   proxy: {
-    '/api': 'https://brahmapuri-server.herokuapp.com/'
+    '/api/': { target: 'https://brahmapuri-server.herokuapp.com/', pathRewrite: {'^/api/': ''}, changeOrigin: true }
+    // '/api': {target: 'https://brahmapuri-server.herokuapp.com/', pathRewrite: {'^/api/': ''}, changeOrigin: true }
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -79,5 +85,8 @@ export default {
           logout: true
         }
       }
-    }
+    },
+    publicRuntimeConfig: {
+      myPublicVariable: process.env.key,
+    },
 }
