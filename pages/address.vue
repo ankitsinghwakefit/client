@@ -173,6 +173,11 @@
 
 <script>
 export default {
+   head() {
+    return {
+      title: "Add Address"
+    };
+  },
   data(){
     return{
       country: "",

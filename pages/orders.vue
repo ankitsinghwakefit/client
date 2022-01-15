@@ -148,6 +148,11 @@
 
 <script>
 export default {
+   head() {
+    return {
+      title: "Your Orders"
+    };
+  },
   data(){
     return{
       orders:"",

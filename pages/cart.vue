@@ -136,7 +136,7 @@
             </div>
 
             <!-- Recently Viewed -->
-            <div class="a-spacing-large">
+            <!-- <div class="a-spacing-large">
               <div class="a-box">
                 <div class="a-box-inner">
                   <h5 class="a-spacing-base">Your recently viewed items</h5>
@@ -185,7 +185,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -200,6 +200,11 @@
 <script>
 import {mapGetters} from "vuex"
 export default {
+   head() {
+    return {
+      title: "Cart"
+    };
+  },
   computed: {
     ...mapGetters(["getCart", "getCartTotalPrice"
     , "getCartLength"])

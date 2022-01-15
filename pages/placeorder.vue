@@ -256,9 +256,8 @@
                     >
                       By placing your order, you agree to
                       brahmapuri-life-essentials
-                      <a href="#">privacy notice</a>
-                      and
-                      <a href="#">conditions of use</a>.
+                      <router-link to="/termsandconditions">conditions of use</router-link> and 
+                       <router-link to="/privacypolicy">Privacy Notice</router-link>.
                     </div>
                     <div class="a-row">
                       <!-- <div id="tfx-header">
@@ -394,24 +393,14 @@
               >
             </p>
             <div class="a-color-secondary a-size-mini">
-              <p class="a-color-secondary a-size-mini">
-                Within 30 days of delivery, you may return new, unopened
-                merchandise in its original condition. Exceptions and
-                restrictions apply. See brahmapuri-life-essentials's
-                <a href="#">Returns Policy</a>
-                <br />
-                <br />Go to the
-                <router-link to="/"
-                  >brahmapuri-life-essentials homepage</router-link
-                >
-                without completing your order.
-              </p>
+              
             </div>
           </div>
           <hr />
           <p class="a-size-small a-text-center a-color-secondary" data-testid>
-            <a href="#">Conditions of Use</a> | <a href="#">Privacy Notice</a> ©
-            1996-2019, brahmapuri-life-essentials, Inc.
+             <router-link to="/termsandconditions">conditions of use</router-link> | 
+                       <router-link to="/privacypolicy">Privacy Notice</router-link> ©
+            2003-2022, brahmapuri-life-essentials, Inc.
           </p>
         </div>
       </div>
@@ -425,6 +414,11 @@
 // import { URLSearchParams } from "url"
 import { mapGetters } from "vuex";
 export default {
+   head() {
+    return {
+      title: "Place Your Order"
+    };
+  },
   data() {
     return {
       address: "",
@@ -479,8 +473,8 @@ export default {
     if (firstResponse.success && firstResponse.address.length > 0) {
       this.address = firstResponse.address[0];
     } else {
-      alert("Please add your Delivery Address");
-      this.$router.push("/address");
+      // alert("Please add your Delivery Address");
+      this.$router.push("/");
     }
     this.payOrderId = secondResponse.id;
     this.orderName = this.getUser.name

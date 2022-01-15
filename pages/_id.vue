@@ -265,12 +265,12 @@
                 <div class="a-row">
                   <div class="a-spacing-top-small">
                     <div class="a-section a-spacing-none">
-                      <div class="a-section a-spacing-none a-spacing-top-mini">
+                      <!-- <div class="a-section a-spacing-none a-spacing-top-mini">
                         This item shipts to
                         <b>Chhindwada</b>
                         <b>Get it by Monday, Sept 23 - Monday, Sept. 30</b>
                         Choose this date at checkout
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
@@ -278,8 +278,8 @@
                 <span class="a-declarative">
                   <a href="#" class="a-link-normal">
                     <div class="a-row a-spacing-mini">
-                      <i class="fal fa-map-market-alt"></i>
-                      <span class="a-size-small">Deliver to Chhindwada</span>
+                      <!-- <i class="fal fa-map-market-alt"></i>
+                      <span class="a-size-small">Deliver to Chhindwada</span> -->
                     </div>
                   </a>
                 </span>
@@ -350,6 +350,11 @@
 <script>
 import { mapActions } from "vuex"
 export default {
+   head() {
+    return {
+      title: "Product"
+    };
+  },
   data(){
     return{
       product: ''

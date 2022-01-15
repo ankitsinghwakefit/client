@@ -50,8 +50,8 @@
                   <div class="a-row a-spacing-top-medium a-size-small">
                     <b>
                       By creating an account, you agree to our
-                       <a href="#">conditions of use</a> and 
-                       <a href="#">Privacy Notice</a>
+                       <router-link to="/termsandconditions">conditions of use</router-link> and 
+                       <router-link to="/privacypolicy">Privacy Notice</router-link>
                     </b>
                   </div>
                 </div>
@@ -76,6 +76,11 @@
 <script>
 
 export default {
+   head() {
+    return {
+      title: "Signup with Us"
+    };
+  },
  data(){
    return{
      name:'',

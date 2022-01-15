@@ -38,3 +38,13 @@ Sahajyog Asrum Brahmapuri, Rahimatpur Tal-Koregan, Satara, Maharashtra, India, 4
     <Footer />
   </div>
 </template>
+
+<script>
+export default {
+   head() {
+    return {
+      title: "Contact Us"
+    };
+  },
+}
+</script>

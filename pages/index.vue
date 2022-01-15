@@ -51,9 +51,9 @@
               </b-list-group>
 
               <b-card-body>
-                <a href="#" class="card-link" @click="addProductToCart(product)">Buy</a>
-                <a href="#" class="card-link" @click="addProductToCart(product)">Add to cart</a>
-                <router-link class="card-link" :to="product._id">View Product</router-link>
+                <a href="#" class="mybutton mybutton1" @click="addProductToCart(product)">Buy</a>
+                <a href="#" class="mybutton mybutton1" @click="addProductToCart(product)">Add to cart</a>
+                <router-link class="mybutton mybutton1" :to="product._id">View Product</router-link>
               </b-card-body>
             </b-card>
           </div></b-col
@@ -72,6 +72,11 @@ import { mapGetters } from 'vuex'
 import featuredProduct from "~/components/FeaturedProduct";
 export default {
   name: "IndexPage",
+   head() {
+    return {
+      title: "Home"
+    };
+  },
   data() {
     return {
       token: "",
@@ -93,6 +98,8 @@ export default {
     } else {
       this.token = null;
       this.userName = null;
+      // alert("please login or register to buy products")
+      this.$router.push("/signup")
     }
   },
    computed: {
@@ -154,5 +161,26 @@ a.nuxt-link-active {
 }
 a.nuxt-link-exact-active {
   color: #00c58e !important;
+}
+.mybutton {
+   background-color: #4CAF50; /* Green */
+  border-radius: 8px;
+  color: white;
+  padding: 2px 9px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.mybutton1 {
+background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+.mybutton1:hover {
+  background-color: #4CAF50;
+  color: white;
 }
 </style>

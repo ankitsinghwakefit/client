@@ -37,7 +37,9 @@
             </div>
             <div class="col-md-3 col-sm-6">
               <div class="navFooterCol">
-                <div class="navFooterColHead">Careers</div>
+                <div class="navFooterColHead">
+            <a href="https://www.youtube.com/channel/UCQakirfw9oa-wholq9jidfw" target="_blank" style="color:white;text-decoration:none">Live <b-icon-youtube variant="danger" class="mytube"></b-icon-youtube></a>
+          </div>
                 <!-- <ul>
                   <li>
                     <a href="#">Sell on Amazon</a>
@@ -578,3 +580,9 @@
   </footer>
   <!--/FOOTER-->
 </template>
+
+<style scoped>
+.mytube {
+  font-size: 20px;
+}
+</style>

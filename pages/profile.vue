@@ -48,6 +48,11 @@
 
 <script>
 export default {
+   head() {
+    return {
+      title: "Your Profile"
+    };
+  },
   data(){
     return{
       name: '',

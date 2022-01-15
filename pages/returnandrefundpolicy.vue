@@ -88,3 +88,13 @@ Sahajyog Ashram Brahmapuri, Rahimatpur Tal-Koregan, Satara, Maharashtra, India, 
     <Footer />
   </div>
 </template>
+
+<script>
+export default {
+   head() {
+    return {
+      title: "Our Return & Refund Policy"
+    };
+  },
+}
+</script>

@@ -45,8 +45,8 @@
                   <div class="a-row a-spacing-top-medium a-size-small">
                     <b>
                       After login, you agree to our
-                       <a href="#">conditions of use</a> and 
-                       <a href="#">Privacy Notice</a>
+                       <router-link to="/termsandconditions">conditions of use</router-link> and 
+                       <router-link to="/privacypolicy">Privacy Notice</router-link>
                     </b>
                   </div>
                 </div>
@@ -73,6 +73,11 @@
 export default {
   middleware: 'auth',
   auth: 'guest',
+   head() {
+    return {
+      title: "Login"
+    };
+  },
  data(){
    return{
      email:'',
