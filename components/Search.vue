@@ -29,6 +29,10 @@
 </template>
 
 <style scoped>
+svg{
+  width: 21px !important;
+  height: 21px !important;
+}
 .sbx-amazon__submit{
   background-color: rgb(201, 199, 199) !important;
 }

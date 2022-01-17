@@ -214,7 +214,7 @@ export default {
           })
 
       if(response.success){
-        this.$router.push("/alladdress")
+        this.$router.push("/")
       }
      } catch(err){
        console.log(err)

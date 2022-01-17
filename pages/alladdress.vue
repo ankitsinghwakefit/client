@@ -324,7 +324,8 @@ export default {
         if(response.success){
           this.message = response.message
           this.address.splice(index,1)
-          window.location.reload(true)
+           this.$router.push("/")
+          // window.location.reload(true)
         }
       }catch(err){
         this.message = err.message
@@ -374,7 +375,8 @@ export default {
           })
       if(response.success){
         this.editAddress = false
-        window.location.reload(true)
+         this.$router.push("/")
+        // window.location.reload(true)
       }
       } catch(err){
 
