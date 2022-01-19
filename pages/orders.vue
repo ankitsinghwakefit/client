@@ -155,8 +155,8 @@ export default {
   },
   data(){
     return{
-      orders:"",
-      products:"",
+      orders:[],
+      products:[],
       orderDate: [],
       totalOrderPrice: [],
       orderPlacedDate:[],

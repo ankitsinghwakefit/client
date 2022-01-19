@@ -189,8 +189,16 @@ export default {
       zipCode: "",
       phoneNumber: "",
       deliveryInstructions: "",
-      securityCode: ""
+      securityCode: "",
+      email: ""
     }
+  },
+  mounted(){
+    if(!process.client) return
+    const savedData = localStorage.getItem("vuex")
+    let a = JSON.parse(savedData)
+    let loggedinUser = a.loginedUser
+    this.email = loggedinUser.email
   },
   methods: {
     async onAddAddress(){
@@ -204,7 +212,8 @@ export default {
       zipCode: this.zipCode,
       phoneNumber: this.phoneNumber,
       deliveryInstructions: this.deliveryInstructions,
-      securityCode: this.securityCode
+      securityCode: this.securityCode,
+      email: this.email
       }
       let v = this.$cookies.get('brahmapuriToken') || localStorage.getItem('brahmapuriToken')
       let response = await this.$axios.$post("https://brahmapuri-server.herokuapp.com/api/address", data,  {

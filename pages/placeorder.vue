@@ -599,7 +599,7 @@ export default {
         .then((res) => {
          if(res.success){
            this.$store.commit("clearCart");
-           this.$router.push("/orders")
+           this.$router.push("/")
          }
         })
         .catch((err) => {

@@ -289,7 +289,8 @@ export default {
       phoneNumber: "",
       deliveryInstructions: "",
       securityCode: "",
-      targetedAddressId: ""
+      targetedAddressId: "",
+      email: ""
     };
   },
   mounted(){
@@ -298,6 +299,13 @@ export default {
     if(!v){
       alert("Please login or register to add address")
       this.$router.push('/login')}
+
+      if(!process.client) return
+    const savedData = localStorage.getItem("vuex")
+    let a = JSON.parse(savedData)
+    let loggedinUser = a.loginedUser
+    this.email = loggedinUser.email
+
     this.$axios.$get("https://brahmapuri-server.herokuapp.com/api/address",
     {
             headers: {
@@ -365,7 +373,8 @@ export default {
       zipCode: this.zipCode,
       phoneNumber: this.phoneNumber,
       deliveryInstructions: this.deliveryInstructions,
-      securityCode: this.securityCode
+      securityCode: this.securityCode,
+      email: this.email
       }
       let v = this.$cookies.get('brahmapuriToken') || localStorage.getItem('brahmapuriToken')
       let response = await this.$axios.$put(`https://brahmapuri-server.herokuapp.com/api/address/${this.targetedAddressId}`, data,  {
