@@ -473,7 +473,7 @@ export default {
     if (firstResponse.success && firstResponse.address.length > 0) {
       this.address = firstResponse.address[0];
     } else {
-      // alert("Please add your Delivery Address");
+      alert("Please add your Delivery Address");
       this.$router.push("/");
     }
     this.payOrderId = secondResponse.id;
@@ -525,9 +525,10 @@ export default {
           this.payResponse = passData
           console.log("payResponse", this.payResponse)
           this.mycal(this.payResponse);
-          alert(response.razorpay_payment_id);
-          alert(response.razorpay_order_id);
-          alert(response.razorpay_signature);
+          alert("Payment successful, please visit orders...")
+          // alert(response.razorpay_payment_id);
+          // alert(response.razorpay_order_id);
+          // alert(response.razorpay_signature);
         },
         prefill: {
           name: this.getUser.name,
@@ -556,13 +557,14 @@ export default {
         console.log("payResponse", this.payResponse)
 
         this.mycallFail(this.payResponse);
-        alert(response.error.code);
-        alert(response.error.description);
-        alert(response.error.source);
-        alert(response.error.step);
-        alert(response.error.reason);
-        alert(response.error.metadata.order_id);
-        alert(response.error.metadata.payment_id);
+        alert("Payment failed, please try again...")
+        // alert(response.error.code);
+        // alert(response.error.description);
+        // alert(response.error.source);
+        // alert(response.error.step);
+        // alert(response.error.reason);
+        // alert(response.error.metadata.order_id);
+        // alert(response.error.metadata.payment_id);
       });
 
       document.getElementById("rzp-button1").onclick = function (e) {
