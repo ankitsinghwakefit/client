@@ -100,7 +100,6 @@ export default {
          this.$router.push('/')
         //  window.location.reload(true)
        } else {
-         console.log("wrong password")
          this.message = "Enter email or password correctly"
              return
        }

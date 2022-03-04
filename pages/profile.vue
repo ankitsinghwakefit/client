@@ -98,7 +98,6 @@ export default {
           'x-access-token': v
         }
       })
-      console.log("user details",response.user.name)
         this.name = response.user.name,
         this.email = response.user.email,
         this.password = response.user.password

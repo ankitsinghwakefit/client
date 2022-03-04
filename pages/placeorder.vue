@@ -448,7 +448,6 @@ export default {
     //   },
   },
   async mounted() {
-    console.log("total price", this.orderPriceTotal)
     let v = localStorage.getItem('brahmapuriToken') || this.$cookies.get('brahmapuriToken')
     // if (!process.client) return;
     // const savedData = localStorage.getItem("vuex");
@@ -469,7 +468,6 @@ export default {
         amount: this.orderPriceTotal,
       }),
     ]);
-    console.log("getting address", firstResponse);
     if (firstResponse.success && firstResponse.address.length > 0) {
       this.address = firstResponse.address[0];
     } else {
@@ -499,11 +497,9 @@ export default {
     this.orderProducts = oPrdoucts
     this.orderAddress = oAddress
     this.orderCart = this.getCart
-    console.log("orderCart", this.getCart, "orderAddress", this.orderAddress, "orderProducts", this.orderProducts)
   },
   methods: {
     callPayU() {
-      console.log("cart total", this.getCartTotal);
       // this.$axios.$get('http://localhost:8000/api/payment').then(res =>{
       //   console.log("response", res)
       var options = {
@@ -523,7 +519,6 @@ export default {
             razorpay_order_id_my: this.payOrderId
           };
           this.payResponse = passData
-          console.log("payResponse", this.payResponse)
           this.mycal(this.payResponse);
           alert("Payment successful, please visit orders...")
           // alert(response.razorpay_payment_id);
@@ -554,7 +549,6 @@ export default {
           payment_id: response.error.payment_id,
         };
         this.payResponse = failData
-        console.log("payResponse", this.payResponse)
 
         this.mycallFail(this.payResponse);
         alert("Payment failed, please try again...")
@@ -585,10 +579,6 @@ export default {
         orderDataOnSuccess,
         cart: this.orderCart
       }
-      console.log("v",v)
-      console.log("mycal called with passPaymentData", passPaymentData);
-      console.log("mycal called with orderDataOnSuccess", orderDataOnSuccess);
-      console.log("mycal called with", passResponse);
       // let abc = JSON.stringify({passResponse})
       await this.$axios
         .$post("https://brahmapuri-server.herokuapp.com/api/payment/pass", {
@@ -609,13 +599,11 @@ export default {
         });
     },
     async mycallFail(failResponse) {
-      console.log("mycallFail called with", failResponse);
       await this.$axios
         .$post("https://brahmapuri-server.herokuapp.com/api/payment/fail", {
           failResponse,
         })
         .then((res) => {
-                console.log("mycallFail axios response with", res);
           alert("Your Payment failed, Please try again...");
         });
     },

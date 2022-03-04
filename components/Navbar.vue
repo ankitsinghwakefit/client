@@ -141,7 +141,6 @@ export default {
   // },
   methods: {
      logoutUser(){
-       console.log("logout")
        localStorage.removeItem("brahmapuriToken");
        this.$cookies.remove("brahmapuriToken")
        this.$store.commit("logoutUser")

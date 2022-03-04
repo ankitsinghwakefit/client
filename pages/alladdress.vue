@@ -294,7 +294,6 @@ export default {
     };
   },
   mounted(){
-    console.log("local", localStorage.getItem('brahmapuriToken'), "cook",this.$cookies.get('brahmapuriToken'))
     let v = localStorage.getItem('brahmapuriToken') || this.$cookies.get('brahmapuriToken')
     if(!v){
       alert("Please login or register to add address")
@@ -314,7 +313,6 @@ export default {
           })
     .then(response => {
       this.showAddAddress = response.address.length
-      console.log("null address",typeof(this.showAddAddress))
       this.address = response.address}
       )
     .catch(err => {console.log(err)})
@@ -328,7 +326,6 @@ export default {
               "x-access-token": v,
             },
           })
-          console.log("response", response)
         if(response.success){
           this.message = response.message
           this.address.splice(index,1)
@@ -357,7 +354,6 @@ export default {
     //   }
     // },
     async onEditAddress(address){
-      console.log("this fullname", this.fullName)
       this.editAddress = true
       this.targetedAddress = address
       this.targetedAddressId = address._id

@@ -101,7 +101,6 @@ export default {
          password: this.password
        }
        let response = await this.$axios.$post('https://brahmapuri-server.herokuapp.com/api/auth/signup', data)
-       console.log(response)
        if(response.success){
         localStorage.setItem('brahmapuriToken', response.token)
          this.$cookies.set('brahmapuriToken', response.token)

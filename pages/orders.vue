@@ -180,7 +180,6 @@ export default {
     }).then(res=>{
       if(res.success){
         this.orders = res.orders
-        console.log("orders", this.orders)
         this.getTotal()
       }
     }).catch(err=>{
@@ -202,14 +201,10 @@ export default {
         let date = new Date(dat)
         this.orderDate.push(date.toLocaleString('en-GB', {day:'numeric', month: 'long', year:'numeric'}))
       })
-        console.log("get order dates", getOrderDate)
       // this.orderDate = getOrderDate
       // this.orderDate = date.toLocaleString('en-GB', {day:'numeric', month: 'long', year:'numeric'})
       this.products = merged
       this.orderShipName = getOrderShip.name
-      console.log("filtered orders", getProducts)
-      console.log("filtered date", this.orderDate)
-      console.log("filtered ship user", this.orderShipName)
       // let total = 0
       // let allTotals = []
       // this.order.map(prod=>{
