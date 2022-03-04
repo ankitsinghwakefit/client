@@ -202,6 +202,10 @@ export default {
   },
   methods: {
     async onAddAddress(){
+      if(this.country == "" || this.fullName == "" || this.streetAddress1 == "" || this.city == "" || this.state == "" || this.zipCode == "" || this.phoneNumber == "" || this.email == "") {
+        alert("Please fill country, fullName, streetAddress1, city, state, zipcode, phoneNumber and email")
+        return
+      }
      try{
         let data = {
       country: this.country,

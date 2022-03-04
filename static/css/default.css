@@ -651,7 +651,8 @@ header form input{
     color: #ccc;
     text-decoration: none;
     font-family: arial,sans-serif;
-    font-size: 13px;
+    font-size: 18px;
+    font-weight: bold;
 }
 .nav-xshop .nav-a:hover{
 	border: 1px solid;
@@ -2736,11 +2737,11 @@ a.action-button:visited .action-inner {
 }
 .navFooterBackToTop {
     margin-bottom: 40px;
-    background-color: #8CC63E;
+    background-color: #4c8d2b;
     color: #fff;
 }
 .navFooterBackToTop:hover {
-    background-color: #485769;
+    background-color: #04362F;
 }
 .navFooterBackToTop span {
     display: block;
