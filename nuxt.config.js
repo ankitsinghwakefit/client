@@ -12,7 +12,10 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'css/font-awesome/css/all.css' },
-      { rel: 'stylesheet', href: 'css/default.css' }
+      { rel: 'stylesheet', href: 'css/font-awesome/all.css' },
+      { rel: 'stylesheet', href: 'css/font-awesome/default.css' },
+      { rel: 'stylesheet', href: 'css/default.css' },
+      { rel: 'stylesheet', href: 'css/all.css' }
     ],
     script: [
       {
