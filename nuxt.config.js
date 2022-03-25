@@ -17,6 +17,12 @@ export default {
       { rel: 'stylesheet', href: 'css/default.css' },
       { rel: 'stylesheet', href: 'css/all.css' }
     ],
+    css: [
+      '~/static/css/font-awesome/css/all.css',
+      '~/static/css/font-awesome/css/default.css',
+      '~/static/css/default.css',
+      '~/static/css/all.css'
+    ],
     script: [
       {
         src: "https://checkout.razorpay.com/v1/checkout.js",
