@@ -167,7 +167,7 @@
   </main>
   <!--/MAIN-->
 
-   <Footer />
+   <Footernew />
   </div>
 </template>
 

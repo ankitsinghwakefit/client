@@ -193,7 +193,7 @@
     <!--/SHOPPING CART-->
   </main>
   <!--/MAIN-->
-  <Footer />
+  <Footernew />
   </div>
 </template>
 

@@ -85,7 +85,7 @@ Sahajyog Ashram Brahmapuri, Rahimatpur Tal-Koregan, Satara, Maharashtra, India, 
 </li>
 </ul>
     </b-container>
-    <Footer />
+    <Footernew />
   </div>
 </template>
 

@@ -62,7 +62,7 @@
     </b-container>
 
     <!-- footer -->
-    <Footer />
+    <Footernew />
   </div>
 </template>
 

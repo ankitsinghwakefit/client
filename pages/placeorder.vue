@@ -406,7 +406,7 @@
       </div>
       <!--/SHIPPING ADDRESS-->
     </body>
-    <Footer />
+    <Footernew />
   </div>
 </template>
 

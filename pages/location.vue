@@ -15,7 +15,7 @@
         </b-row>
       </b-container>
     </main>
-    <Footer />
+    <Footernew />
   </div>
 </template>
 

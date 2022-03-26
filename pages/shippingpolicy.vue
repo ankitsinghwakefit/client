@@ -21,7 +21,7 @@
 </li>
 </ul>
     </b-container>
-    <Footer />
+    <Footernew />
   </div>
 </template>
 

@@ -64,7 +64,7 @@
       </div>
     </div>
   </div>
-<Footer />
+<Footernew />
   </div>
 </template>
 

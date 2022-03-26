@@ -343,7 +343,7 @@
       </div>
     </div>
   </main>
-  <Footer />
+  <Footernew />
   </div>
 </template>
 

@@ -35,7 +35,7 @@ Sahajyog Asrum Brahmapuri, Rahimatpur Tal-Koregan, Satara, Maharashtra, India, 4
         </b-row>
       </b-container>
     </main>
-    <Footer />
+    <Footernew />
   </div>
 </template>
 

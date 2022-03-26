@@ -142,7 +142,7 @@
     <!--/YOUR ORDER-->
   </main>
   <!--/MAIN-->
-  <Footer />
+  <Footernew />
   </div>
 </template>
 

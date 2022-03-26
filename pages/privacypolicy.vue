@@ -178,7 +178,7 @@
 <li>By email: info@brahmapuri.in</li>
 </ul>
 </b-container>
-<Footer />
+<Footernew />
 </div>
 </template>
 

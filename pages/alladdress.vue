@@ -261,7 +261,7 @@
   <!-- edit address -->
   
   <!-- / edit address -->
-  <Footer />
+  <Footernew />
   </div>
 </template>
 

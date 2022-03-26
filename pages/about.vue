@@ -145,7 +145,7 @@ social and spiritual upliftment for many decades.
       </div>
       </b-container> -->
     </main>
-    <Footer />
+    <Footernew />
   </div>
 </template>
 

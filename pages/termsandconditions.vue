@@ -93,7 +93,7 @@ You agree that the original English text shall prevail in the case of a dispute.
 </li>
 </ul>
     </b-container>
-    <Footer />
+    <Footernew />
   </div>
 </template>
 
