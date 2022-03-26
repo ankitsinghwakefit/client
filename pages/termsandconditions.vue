@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <Navbarnew />
     <b-container fluid class="mt-3">
       <h1>Terms and Conditions</h1>
 <p>Last updated: January 13, 2022</p>

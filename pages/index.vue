@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- navbar -->
-    <Navbar />
+    <Navbarnew />
     <!-- main content -->
 
     <b-container fluid class="bv-example-row">

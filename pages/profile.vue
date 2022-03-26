@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Navbar />
+  <Navbarnew />
   <main>
     <div class="container-fluid c-section">
       <div class="row">

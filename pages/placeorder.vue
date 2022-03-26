@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <Navbarnew />
     <body>
       <!--SHIPPING ADDRESS-->
       <div class="container-fluid">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <Navbarnew />
     <b-container class="mt-3">
        <h1>Shipping Policy</h1>
 <p>Last updated: January 13, 2022</p>

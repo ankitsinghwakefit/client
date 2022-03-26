@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <Navbarnew />
     <main>
       <b-container class="bv-example-row">
         <b-row style="margin: 20px;">

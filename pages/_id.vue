@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Navbar />
+  <Navbarnew />
   <main>
     <!-- Breadcrumbs -->
     <div class="a-spacing-top-medium"></div>

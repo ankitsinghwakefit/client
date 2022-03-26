@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Navbar />
+  <Navbarnew />
   <!--MAIN-->
   <main>
     <!--REGISTER ADDRESS-->

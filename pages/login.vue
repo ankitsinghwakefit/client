@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Navbar />
+  <Navbarnew />
   <div class="registerPage">
     <div class="container">
       <div class="row">

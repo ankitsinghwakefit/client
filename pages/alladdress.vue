@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Navbar />
+  <Navbarnew />
   <!-- edit address -->
   <main v-if="editAddress">
     <!--REGISTER ADDRESS-->
