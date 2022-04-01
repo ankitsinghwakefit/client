@@ -59,7 +59,7 @@
                 <div class="a-row">
                   <b>
                     Already have an account?
-                    <nuxt-link to="/login" class="a-link-emphasis">Sign in</nuxt-link>
+                    <nuxt-link to="/loginnew" class="a-link-emphasis">Sign in</nuxt-link>
                   </b>
                 </div>  
               </div>

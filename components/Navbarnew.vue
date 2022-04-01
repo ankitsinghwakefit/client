@@ -22,15 +22,29 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-form>
+        <!-- <b-nav-form>
           <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
           <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-        </b-nav-form>
+        </b-nav-form> -->
 
         <b-nav-item-dropdown text="Lang" right>
           <b-dropdown-item href="#">EN</b-dropdown-item>
           <b-dropdown-item href="#">Hindi</b-dropdown-item>
         </b-nav-item-dropdown>
+        <b-nav-item right to="/orders" class="nav-a nav-a-2 nav-single-row-link">
+        Orders
+              <!-- <span class="nav-line-1"></span> -->
+              <!-- <span class="nav-line-2">Orders</span> -->
+              </b-nav-item>
+
+              <b-nav-item right to="/cart" class="nav-a nav-a-2" id="nav-cart">
+              <!-- <span aria-hidden="true" class="nav-line-1"></span>
+               <span aria-hidden="true" class="nav-line-2">Cart</span> -->
+              <!-- <span class="nav-cart-icon nav-sprite"></span> -->
+              
+              <b-icon icon="cart-check-fill" style="color: #F5F5F5;width: 40px; height: 30px;"></b-icon>
+              <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-0">{{getCartLength}}</span>
+              </b-nav-item>
 
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
@@ -65,10 +79,10 @@ export default {
        this.$cookies.remove("brahmapuriToken")
        this.$store.commit("logoutUser")
       //  window.location.reload(true)
-       this.$router.push("/login")
+       this.$router.push("/loginnew")
      },
      loginUser(){
-        this.$router.push("/login")
+        this.$router.push("/loginnew")
      }
     }
 }
@@ -85,6 +99,16 @@ export default {
 }
 .navbar-dark .navbar-nav .nav-link{
     color:rgb(218, 214, 214)!important;
+    font-size: 20px;
+}
+.nav-link .dropdown-toggle {
+  color:rgb(218, 214, 214)!important;
+    font-size: 20px;
+}
+@media screen and (max-width: 1024px) {
+  .navbar-dark .navbar-nav .nav-link{
+    color:rgb(218, 214, 214)!important;
     font-size: 18px;
+}
 }
 </style>
