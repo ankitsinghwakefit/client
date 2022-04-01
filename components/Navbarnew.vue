@@ -13,7 +13,7 @@
         <b-nav-item to="/">Products</b-nav-item>
         <b-nav-item to="/contact">Contact Us</b-nav-item>
         <b-nav-item to="/about">About Us</b-nav-item>
-        <b-nav-item  to="/signup" v-show="!getUser" class="nav-a">Register</b-nav-item >
+        <b-nav-item  to="/signupnew" v-show="!getUser" class="nav-a">Register</b-nav-item >
         <b-nav-item v-if="getUser" @click="logoutUser" to="#">Logout</b-nav-item>
         <b-nav-item v-else @click="loginUser">Login</b-nav-item>
         <b-nav-item to="/alladdress">Your Address</b-nav-item>

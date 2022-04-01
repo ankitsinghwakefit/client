@@ -99,7 +99,7 @@ export default {
       this.token = null;
       this.userName = null;
       // alert("please login or register to buy products")
-      this.$router.push("/signup")
+      this.$router.push("/signupnew")
     }
   },
    computed: {

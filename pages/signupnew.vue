@@ -3,8 +3,12 @@
         <Navbarnew />
         <div class="container">
          <div>
-                <h1>Login</h1>
+                <h1 style="margin-bottom:18px">Create your Account</h1>
         <form>
+        <div class="row">
+            <label for="name">Name</label>
+            <input  v-model="name" type="text" name="name" autocomplete="on" placeholder="Your name">
+        </div>
         <div class="row">
             <label for="email">Email</label>
             <input  v-model="email" type="email" name="email" autocomplete="on" placeholder="email@example.com">
@@ -13,9 +17,9 @@
             <label for="password">Password</label>
             <input v-model="password" type="password" name="password">
         </div>
-        <button @click="onLogin">Login</button>
-        <p style="margin-top:10px"> Don't have a account?
-                    <nuxt-link to="/signupnew" class="a-link-emphasis">Register</nuxt-link></p>
+        <button @click="onSignup">Create your Account</button>
+        <p style="margin-top:10px"> Already have an account?
+                    <nuxt-link to="/loginnew" class="a-link-emphasis">Signin</nuxt-link></p>
         </form>
          </div>
          <p>{{message}}</p>
@@ -27,58 +31,46 @@
 <script>
 
 export default {
-  middleware: 'auth',
-  auth: 'guest',
    head() {
     return {
-      title: "Login"
+      title: "Signup with Us"
     };
   },
  data(){
    return{
+     name:'',
      email:'',
-     password:'',
-     message: ''
+     password:''
    }
  },
  methods: {
-   async onLogin(){
-     event.preventDefault()
-    //  console.log("called post method")
+   async onSignup(){
+       event.preventDefault()
+     if(!this.name || !this.email || !this.password){
+       alert("Please enter all the fields to register")
+       return
+     }
      try{
        let data = {
+         name: this.name,
          email: this.email,
          password: this.password
        }
-       let response = await this.$axios.$post('https://brahmapuri-server.herokuapp.com/api/auth/login', data)
+       let response = await this.$axios.$post('https://brahmapuri-server.herokuapp.com/api/auth/signup', data)
        if(response.success){
-         localStorage.setItem('brahmapuriToken', response.token)
+        localStorage.setItem('brahmapuriToken', response.token)
          this.$cookies.set('brahmapuriToken', response.token)
+         this.$auth.loginWith('local',{
+           data:{
+             email: this.email,
+             password: this.password
+           }
+         })
          this.$router.push('/')
-        //  window.location.reload(true)
-       } else {
-         this.message = "Enter email or password correctly"
-             return
        }
-        //  this.$auth.loginWith('local',{
-        //    data:{
-        //      email: this.email,
-        //      password: this.password
-        //    }
-        //  }).then(response =>{
-        //    console.log("login response", response)
-          //  if(response.data.success){
-          //    this.$cookies.set('brahmapuriToken', response.data.token)
-          //    window.location.reload(true)
-          //    this.$router.push('/')
-          //  } 
-          //  if(!response.success) {
-          //    this.message = "Enter email or password correctly"
-          //    console.log("wrong password")
-          //    return
-          //  }
-         //})
-        //  this.$forceUpdate();
+       if(!response.success){
+         alert(response.message)
+       }
      } catch(err){
        console.log(err)
      }
