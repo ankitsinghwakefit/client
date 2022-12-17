@@ -1,4 +1,4 @@
-const URL = 'https://brahmapuri-server.herokuapp.com/'
+const URL = 'https://rose-important-hedgehog.cyclic.app/'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -68,8 +68,8 @@ export default {
   },
 
   proxy: {
-    '/api/': { target: 'https://brahmapuri-server.herokuapp.com/', pathRewrite: {'^/api/': ''}, changeOrigin: true }
-    // '/api': {target: 'https://brahmapuri-server.herokuapp.com/', pathRewrite: {'^/api/': ''}, changeOrigin: true }
+    // '/api/': { target: 'https://rose-important-hedgehog.cyclic.app/', pathRewrite: {'^/api/': ''}, changeOrigin: true }
+    // '/api': {target: 'https://rose-important-hedgehog.cyclic.app/', pathRewrite: {'^/api/': ''}, changeOrigin: true }
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -87,9 +87,9 @@ export default {
     strategies: {
       local: {
         endpoints: {
-            login: { url: 'https://brahmapuri-server.herokuapp.com/api/auth/login', method: 'post', propertyName: 'token' },
-            logout: { url: 'https://brahmapuri-server.herokuapp.com/api/auth/logout', method: 'post' },
-            user: { url: 'https://brahmapuri-server.herokuapp.com/api/auth/user', method: 'get' }
+            login: { url: 'https://rose-important-hedgehog.cyclic.app/api/auth/login', method: 'post', propertyName: 'token' },
+            logout: { url: 'https://rose-important-hedgehog.cyclic.app/api/auth/logout', method: 'post' },
+            user: { url: 'https://rose-important-hedgehog.cyclic.app/api/auth/user', method: 'get' }
         },
           logout: true
         }

@@ -94,7 +94,7 @@ export default {
          email: this.email,
          password: this.password
        }
-       let response = await this.$axios.$post('https://brahmapuri-server.herokuapp.com/api/auth/login', data)
+       let response = await this.$axios.$post('https://rose-important-hedgehog.cyclic.app/api/auth/login', data)
        if(response.success){
          localStorage.setItem('brahmapuriToken', response.token)
          this.$cookies.set('brahmapuriToken', response.token)

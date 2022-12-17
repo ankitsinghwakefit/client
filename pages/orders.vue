@@ -173,7 +173,7 @@ export default {
   mounted(){
     let v = localStorage.getItem('brahmapuriToken') || this.$cookies.get('brahmapuriToken')
 
-    this.$axios.$get("https://brahmapuri-server.herokuapp.com/api/userorders",{
+    this.$axios.$get("https://rose-important-hedgehog.cyclic.app/api/userorders",{
       headers: {
         "x-access-token": v
       }

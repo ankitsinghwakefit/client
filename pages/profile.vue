@@ -78,7 +78,7 @@ export default {
         password: this.password
       }
       try{
-        let response = await this.$axios.$put('https://brahmapuri-server.herokuapp.com/api/auth/user',{data},{
+        let response = await this.$axios.$put('https://rose-important-hedgehog.cyclic.app/api/auth/user',{data},{
         headers: {
           'x-access-token': tok
         }
@@ -93,7 +93,7 @@ export default {
     async getUserDetails(){
        try{
          let v = this.$cookies.get('brahmapuriToken')
-      let response = await this.$axios.$get("https://brahmapuri-server.herokuapp.com/api/auth/user", {
+      let response = await this.$axios.$get("https://rose-important-hedgehog.cyclic.app/api/auth/user", {
         headers: {
           'x-access-token': v
         }

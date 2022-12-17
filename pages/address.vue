@@ -220,7 +220,7 @@ export default {
       email: this.email
       }
       let v = this.$cookies.get('brahmapuriToken') || localStorage.getItem('brahmapuriToken')
-      let response = await this.$axios.$post("https://brahmapuri-server.herokuapp.com/api/address", data,  {
+      let response = await this.$axios.$post("https://rose-important-hedgehog.cyclic.app/api/address", data,  {
             headers: {
               "x-access-token": v,
             },

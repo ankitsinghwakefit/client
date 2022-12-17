@@ -305,7 +305,7 @@ export default {
     let loggedinUser = a.loginedUser
     this.email = loggedinUser.email
 
-    this.$axios.$get("https://brahmapuri-server.herokuapp.com/api/address",
+    this.$axios.$get("https://rose-important-hedgehog.cyclic.app/api/address",
     {
             headers: {
               "x-access-token": v,
@@ -321,7 +321,7 @@ export default {
     async onDeleteAddress(id,index){
     try{
       let v = this.$cookies.get('brahmapuriToken') || localStorage.getItem('brahmapuriToken')
-        let response = await this.$axios.$delete(`https://brahmapuri-server.herokuapp.com/api/address/${id}`,{
+        let response = await this.$axios.$delete(`https://rose-important-hedgehog.cyclic.app/api/address/${id}`,{
             headers: {
               "x-access-token": v,
             },
@@ -373,7 +373,7 @@ export default {
       email: this.email
       }
       let v = this.$cookies.get('brahmapuriToken') || localStorage.getItem('brahmapuriToken')
-      let response = await this.$axios.$put(`https://brahmapuri-server.herokuapp.com/api/address/${this.targetedAddressId}`, data,  {
+      let response = await this.$axios.$put(`https://rose-important-hedgehog.cyclic.app/api/address/${this.targetedAddressId}`, data,  {
             headers: {
               "x-access-token": v,
             },

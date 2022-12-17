@@ -362,7 +362,7 @@ export default {
   },
   mounted(){
 
-    this.$axios.$get(`https://brahmapuri-server.herokuapp.com/api/products/${this.$route.params.id}`)
+    this.$axios.$get(`https://rose-important-hedgehog.cyclic.app/api/products/${this.$route.params.id}`)
     .then(response => {this.product = response.product})
     .catch(err => {console.log(err)})
   },

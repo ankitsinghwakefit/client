@@ -106,7 +106,7 @@ export default {
     ...mapGetters(["getUser"])
   },
   mounted(){
-    this.$axios.$get("https://brahmapuri-server.herokuapp.com/api/products")
+    this.$axios.$get("https://rose-important-hedgehog.cyclic.app/api/products")
     .then(response => {this.products = response.products})
     .catch(err => {console.log(err)})
   },
@@ -116,7 +116,7 @@ export default {
   // async asyncData({ $axios }) {
   //   try {
   //     let response = await $axios.$get(
-  //       "https://brahmapuri-server.herokuapp.com/api/products"
+  //       "https://rose-important-hedgehog.cyclic.app/api/products"
   //     );
   //     return {
   //       products: response.products,
@@ -131,7 +131,7 @@ export default {
         let v = this.$cookies.get("brahmapuriToken");
         // let v = LocalStorage.getItem('brahmapuriToken') || this.$cookies.get('brahmapuriToken')
         let response = await this.$axios.$get(
-          "https://brahmapuri-server.herokuapp.com/api/auth/user",
+          "https://rose-important-hedgehog.cyclic.app/api/auth/user",
           {
             headers: {
               "x-access-token": v,

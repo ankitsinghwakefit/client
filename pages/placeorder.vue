@@ -459,12 +459,12 @@ export default {
       this.$router.push("/login");
     }
     const [firstResponse, secondResponse] = await Promise.all([
-      this.$axios.$get(`https://brahmapuri-server.herokuapp.com/api/address`, {
+      this.$axios.$get(`https://rose-important-hedgehog.cyclic.app/api/address`, {
         headers: {
           "x-access-token": v,
         },
       }),
-      this.$axios.$post(`https://brahmapuri-server.herokuapp.com/api/payment`, {
+      this.$axios.$post(`https://rose-important-hedgehog.cyclic.app/api/payment`, {
         amount: this.orderPriceTotal,
       }),
     ]);
@@ -581,7 +581,7 @@ export default {
       }
       // let abc = JSON.stringify({passResponse})
       await this.$axios
-        .$post("https://brahmapuri-server.herokuapp.com/api/payment/pass", {
+        .$post("https://rose-important-hedgehog.cyclic.app/api/payment/pass", {
           passResponse,
         },{
         headers: {
@@ -600,7 +600,7 @@ export default {
     },
     async mycallFail(failResponse) {
       await this.$axios
-        .$post("https://brahmapuri-server.herokuapp.com/api/payment/fail", {
+        .$post("https://rose-important-hedgehog.cyclic.app/api/payment/fail", {
           failResponse,
         })
         .then((res) => {
