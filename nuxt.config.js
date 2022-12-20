@@ -68,7 +68,7 @@ export default {
   },
 
   proxy: {
-    // '/api/': { target: 'https://rose-important-hedgehog.cyclic.app/', pathRewrite: {'^/api/': ''}, changeOrigin: true }
+    '/api/': { target: 'https://rose-important-hedgehog.cyclic.app/', pathRewrite: {'^/api/': ''}, changeOrigin: true }
     // '/api': {target: 'https://rose-important-hedgehog.cyclic.app/', pathRewrite: {'^/api/': ''}, changeOrigin: true }
   },
 

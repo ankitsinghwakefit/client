@@ -505,7 +505,7 @@ export default {
       var options = {
         // "my key": "my secret key",
         key: this.$config.myPublicVariable,
-        amount: this.getCartTotal, // 2000 paise = INR 20
+        amount: this.getCartTotal*100, // 2000 paise = INR 20
         currency: "INR",
         name: "Brahmapuri-Life-Essentials",
         description: "Vibrated, Organic, Hand Made.",
